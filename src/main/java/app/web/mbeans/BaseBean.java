@@ -17,7 +17,7 @@ public abstract class BaseBean {
         }
     }
 
-    protected HttpSession getSession() {
+    protected HttpSession session() {
         return (HttpSession) facesContext.getExternalContext().getSession(true);
     }
 }

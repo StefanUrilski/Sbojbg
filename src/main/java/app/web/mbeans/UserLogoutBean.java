@@ -8,8 +8,8 @@ import javax.inject.Named;
 public class UserLogoutBean extends BaseBean {
 
     public void logout() {
-        getSession().invalidate();
+        session().invalidate();
 
-        redirect("/faces/view/index.xhtml");
+        redirect("/index");
     }
 }
