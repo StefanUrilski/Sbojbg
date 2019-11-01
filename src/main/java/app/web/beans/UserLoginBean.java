@@ -1,4 +1,4 @@
-package app.web.mbeans;
+package app.web.beans;
 
 import app.domain.models.binding.UserLoginBindingModel;
 import app.domain.models.service.UserServiceModel;
@@ -48,7 +48,6 @@ public class UserLoginBean extends BaseBean {
             redirect("/login");
             return;
         }
-
 
         session().setAttribute("username", userServiceModel.getUsername());
         session().setAttribute("role", userServiceModel.getRole());

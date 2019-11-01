@@ -1,4 +1,4 @@
-package app.web.mbeans;
+package app.web.beans;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
