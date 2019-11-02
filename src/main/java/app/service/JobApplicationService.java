@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface JobApplicationService {
 
-    void addJob(JobServiceModel jobServiceModel);
+    boolean addJob(JobServiceModel jobServiceModel);
 
     List<String> getAllSectors();
 }

@@ -23,10 +23,16 @@ public class JobApplicationServiceImpl implements JobApplicationService {
     }
 
     @Override
-    public void addJob(JobServiceModel jobServiceModel) {
+    public boolean addJob(JobServiceModel jobServiceModel) {
         JobApplication job = modelMapper.map(jobServiceModel, JobApplication.class);
 
-        jobRepository.save(job);
+        try {
+            jobRepository.save(job);
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 
     @Override
