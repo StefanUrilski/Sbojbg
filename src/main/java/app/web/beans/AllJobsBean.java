@@ -1,6 +1,6 @@
 package app.web.beans;
 
-import app.domain.models.view.JobsViewModel;
+import app.domain.models.view.JobViewModel;
 import app.service.JobApplicationService;
 import org.modelmapper.ModelMapper;
 
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @RequestScoped
 public class AllJobsBean extends BaseBean {
 
-    private List<JobsViewModel> jobs;
+    private List<JobViewModel> jobs;
 
     private JobApplicationService jobService;
     private ModelMapper modelMapper;
@@ -32,15 +32,15 @@ public class AllJobsBean extends BaseBean {
     @PostConstruct
     private void init() {
         jobs = jobService.getAllJobs().stream()
-                .map(job -> modelMapper.map(job, JobsViewModel.class))
+                .map(job -> modelMapper.map(job, JobViewModel.class))
                 .collect(Collectors.toList());
     }
 
-    public List<JobsViewModel> getJobs() {
+    public List<JobViewModel> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<JobsViewModel> jobs) {
+    public void setJobs(List<JobViewModel> jobs) {
         this.jobs = jobs;
     }
 }

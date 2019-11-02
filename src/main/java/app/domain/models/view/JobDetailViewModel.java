@@ -1,10 +1,14 @@
 package app.domain.models.view;
 
-public class JobsViewModel {
+import java.math.BigDecimal;
+
+public class JobDetailViewModel {
 
     private String id;
     private String sector;
     private String profession;
+    private BigDecimal salary;
+    private String description;
 
     public String getId() {
         return id;
@@ -28,5 +32,21 @@ public class JobsViewModel {
 
     public void setProfession(String profession) {
         this.profession = profession;
+    }
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -1,6 +1,7 @@
 package app.web.beans;
 
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
@@ -19,5 +20,9 @@ public abstract class BaseBean {
 
     protected HttpSession session() {
         return (HttpSession) facesContext.getExternalContext().getSession(false);
+    }
+
+    protected HttpServletRequest request() {
+        return (HttpServletRequest)facesContext.getExternalContext().getRequest();
     }
 }
