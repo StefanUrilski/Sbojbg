@@ -9,4 +9,6 @@ public interface JobApplicationService {
     boolean addJob(JobServiceModel jobServiceModel);
 
     List<String> getAllSectors();
+
+    List<JobServiceModel> getAllJobs();
 }

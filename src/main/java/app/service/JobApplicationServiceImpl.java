@@ -41,4 +41,11 @@ public class JobApplicationServiceImpl implements JobApplicationService {
                 .map(Enum::name)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<JobServiceModel> getAllJobs() {
+        return jobRepository.findAll().stream()
+                .map(jobApplication -> modelMapper.map(jobApplication, JobServiceModel.class))
+                .collect(Collectors.toList());
+    }
 }
