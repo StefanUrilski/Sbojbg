@@ -48,4 +48,9 @@ public class JobApplicationServiceImpl implements JobApplicationService {
                 .map(jobApplication -> modelMapper.map(jobApplication, JobServiceModel.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public JobServiceModel getById(String id) {
+        return modelMapper.map(jobRepository.findById(id), JobServiceModel.class);
+    }
 }

@@ -11,4 +11,6 @@ public interface JobApplicationService {
     List<String> getAllSectors();
 
     List<JobServiceModel> getAllJobs();
+
+    JobServiceModel getById(String id);
 }
