@@ -26,12 +26,14 @@ public class DeleteJobBean extends BaseBean {
     }
 
     @PostConstruct
-    public void init() {
+    private void init() {
         String id = request().getParameter("id");
         job = modelMapper.map(jobService.getById(id), JobDetailViewModel.class);
     }
 
-    public void deleteJob(String id) {
+    public void deleteJob() {
+        String id = request().getParameter("id");
+
         boolean deleted = jobService.deleteById(id);
 
         if (!deleted) { return; }

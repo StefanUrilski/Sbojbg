@@ -13,4 +13,6 @@ public interface JobApplicationService {
     List<JobServiceModel> getAllJobs();
 
     JobServiceModel getById(String id);
+
+    boolean deleteById(String id);
 }

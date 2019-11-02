@@ -53,4 +53,11 @@ public class JobApplicationServiceImpl implements JobApplicationService {
     public JobServiceModel getById(String id) {
         return modelMapper.map(jobRepository.findById(id), JobServiceModel.class);
     }
+
+    @Override
+    public boolean deleteById(String id) {
+        jobRepository.removeById(id);
+
+        return jobRepository.findById(id) == null;
+    }
 }
